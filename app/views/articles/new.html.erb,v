@@ -1,0 +1,30 @@
+head	1.1;
+access;
+symbols;
+locks
+	workingman:1.1; strict;
+comment	@# @;
+
+
+1.1
+date	2014.05.15.17.01.20;	author workingman;	state Exp;
+branches;
+next	;
+
+
+desc
+@Partial class
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@<h1>New Atricle</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', articles_path %>
+@

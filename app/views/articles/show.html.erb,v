@@ -1,0 +1,74 @@
+head	1.2;
+access;
+symbols;
+locks
+	workingman:1.2; strict;
+comment	@# @;
+
+
+1.2
+date	2014.05.15.18.41.27;	author workingman;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2014.05.15.18.40.39;	author workingman;	state Exp;
+branches;
+next	;
+
+
+desc
+@Before partial class
+@
+
+
+1.2
+log
+@after partial class
+@
+text
+@<p>
+  <strong>Title:</strong>
+  <%= @@article.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @@article.text %>
+<p>
+
+<h2>Comments</h2>
+<% render @@article.comments  %>
+
+<h2>Add a comment</h2>
+<%= render "comments/form" %>
+  
+  <%= link_to 'Back to Articles', articles_path %>
+ | <%= link_to 'Edit Articles', edit_article_path(@@article) %>
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d15 1
+a15 13
+<%= form_for([@@article, @@article.comments.build]) do |f| %>
+  <p>
+    <%= f.label :commenter %><br>
+    <%= f.text_field :commenter %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+  <%= f.submit %>
+  </p>
+<% end %>
+d17 1
+a17 1
+<%= link_to 'Back to Articles', articles_path %>
+@
