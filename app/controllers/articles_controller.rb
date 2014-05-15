@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  #get /new
   def new
     @article = Article.new
   end
